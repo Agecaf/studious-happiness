@@ -1,0 +1,93 @@
+<!doctype=html>
+<html>
+<head>
+  <title>Bullet Hell Pattern Demo</title>
+  <meta charset="utf-8">
+</head>
+
+<style>
+body {
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+select {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+</style>
+
+<body>
+
+  <!-- Title of demo, author -->
+  <h1 id="demo_title">Select a Demo!</h1>
+  <h3 id="demo_author">Agecaf</h3>
+
+  <!-- Main Canvas -->
+  <canvas id="demo_canvas" width="600" height="600"></canvas>
+
+  <!-- Demo Select -->
+  <select id="demo_select"></select>
+
+  <!-- Demo Text -->
+  <p id="demo_text"></p>
+
+  <!-- Scripting -->
+  <h3>Scripting</h3>
+  <p>
+    Below is a text field with the constants used for this demo (in JSON).
+    Feel free to manipulate them and restart the demo (R) to see how changing
+    the constants affect this particular demo.
+  </p>
+  <textarea id="demo_script">{}</textarea>
+
+  <!-- Control Legend -->
+  <h3>Controls</h3>
+  <p>
+    WASD -- Move player character.<br>
+    Shift -- Slow movement.<br>
+    R -- Restart demo.<br>
+  </p>
+
+
+  <!-- Main Source Code -->
+  <script src="main/demo_manager.js"></script>
+  <script src="main/cache.js"></script>
+  <script src="main/controls.js"></script>
+  <script src="bullet/pose.js"></script>
+  <script src="bullet/bullet.js"></script>
+  <script src="bullet/movement.js"></script>
+  <script src="main/game_engine.js"></script>
+
+
+
+  <!-- Demos -->
+  <script src="demo/clock.js"></script>
+  <script src="demo/relative.js"></script>
+  <script src="demo/lifespan_1.js"></script>
+  <script src="demo/lifespan_2.js"></script>
+  <script src="demo/lifespan_3.js"></script>
+  <script src="demo/lifespan_4.js"></script>
+  <script src="demo/spiral_archimedean.js"></script>
+  <script src="demo/spiral_fermat.js"></script>
+  <script src="demo/spiral_log.js"></script>
+  <script src="demo/golden_archimedean.js"></script>
+  <script src="demo/golden_fermat.js"></script>
+  <script src="demo/golden_log.js"></script>
+
+
+</body>
+</html>
