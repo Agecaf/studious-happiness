@@ -13,9 +13,9 @@
 
   demo.constants = {
     NBRANCHES: 5,
-    LIFE: 3,
+    LIFE: 5,
     DENSITY: 50,
-    SPEED: 0.3,
+    SPEED: 0.02,
     ROT: 0.21
   }
 

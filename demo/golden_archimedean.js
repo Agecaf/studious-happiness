@@ -13,7 +13,6 @@
   };
 
   demo.constants = {
-    NBRANCHES: 5,
     LIFE: 7,
     DENSITY: 200,
     SPEED: 0.1

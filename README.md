@@ -1,7 +1,6 @@
 # Demo is available online!
 
-Just click the link above (hosted by github).
-
+[HERE](https://agecaf.github.io/studious-happiness/)
 
 # WTF is this?
 

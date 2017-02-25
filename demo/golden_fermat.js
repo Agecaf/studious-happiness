@@ -14,10 +14,9 @@
   };
 
   demo.constants = {
-    NBRANCHES: 5,
-    LIFE: 7,
-    DENSITY: 200,
-    SPEED: 0.1
+    LIFE: 20,
+    DENSITY: 500,
+    SPEED: 0.175
   }
 
   demo.mainBullet = (canvas, ctx) => {
