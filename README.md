@@ -2,6 +2,9 @@
 
 [HERE](https://agecaf.github.io/studious-happiness/)
 
+**WARNING** Bullet patterns in bright colors over a dark background. I'm not an
+expert on seizures, so I'll warn just in case.
+
 # WTF is this?
 
 This is an experiment about making bullet hell patterns in a more... *expressive*

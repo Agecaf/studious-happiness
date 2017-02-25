@@ -25,16 +25,53 @@
 
 
   // Linear movement passing through "pose" at "speed".
-  mv.linear = (pose, speed) => { return (t) =>
-    pose.forward(speed * (t - pose.t))
+  mv.linear = (pose, speed) => { return (t) => {
+      return pose
+        .forward(speed * (t - pose.t))
+        .delay(t - pose.t);
+    }
   };
 
   // Linear interpolation from "pose" to "target" (pose).
-  mv.linearIplt = (pose, target) => { return (t) =>
-    pose.towards(target).forward((t-pose.t)/(target.t-pose.t)*pose.dist(target))
+  mv.linearIplt = (pose, target) => { return (t) => {
+      return pose
+        .towards(target)
+        .forward((t-pose.t)/(target.t-pose.t)*pose.dist(target))
+        .delay(t-pose.t);
+    }
   }
 
+  mv.bezier = (from, fromSpeed, to, toSpeed) => { return (t) => {
+      const s0 = fromSpeed * (to.t - from.t) / 3;
+      const s1 = toSpeed * (to.t - from.t) / 3;
+      const tt = (t - from.t) / (to.t - from.t);
+      const mt = 1 - tt;
+      const p0 = from;
+      const p1 = from.forward(s0);
+      const p2 = to.forward(-s1);
+      const p3 = to;
+      const px = (
+        (p0.x * (  mt*mt*mt)) +
+        (p1.x * (3*mt*mt*tt)) +
+        (p2.x * (3*mt*tt*tt)) +
+        (p3.x * (  tt*tt*tt)));
+      const py = (
+        (p0.y * (  mt*mt*mt)) +
+        (p1.y * (3*mt*mt*tt)) +
+        (p2.y * (3*mt*tt*tt)) +
+        (p3.y * (  tt*tt*tt)));
+      const ox = (
+        ((p1.x - p0.x) * (3*mt*mt)) +
+        ((p2.x - p1.x) * (6*mt*tt)) +
+        ((p3.x - p2.x) * (3*tt*tt)));
+      const oy = (
+        ((p1.y - p0.y) * (3*mt*mt)) +
+        ((p2.y - p1.y) * (6*mt*tt)) +
+        ((p3.y - p2.y) * (3*tt*tt)));
 
+      return new Pose(px, py, Math.atan2(oy, ox), t);
+    }
+  }
 
 
 

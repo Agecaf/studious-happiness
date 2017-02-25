@@ -36,6 +36,26 @@
       src : "./assets/player_fill.svg",
       width: 40,
       height: 40
+    },
+    "rhombus_1" : {
+      src : "./assets/rhombus_1.svg",
+      width: 40,
+      height: 40
+    },
+    "rhombus_2" : {
+      src : "./assets/rhombus_2.svg",
+      width: 40,
+      height: 40
+    },
+    "rhombus_3" : {
+      src : "./assets/rhombus_3.svg",
+      width: 40,
+      height: 40
+    },
+    "rhombus_4" : {
+      src : "./assets/rhombus_4.svg",
+      width: 40,
+      height: 40
     }
   };
 
